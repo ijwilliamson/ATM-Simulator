@@ -164,7 +164,7 @@ screens = {
         temp = this.deepMasterCopy();
         temp[3] = (`│         Hello ${AccountName.padEnd(28)}│`);
         temp[5] = ("│         Your Current Balance              │");
-        temp[7] = (`│         ${(atm.atmControl.checkBalance(AccountNumber)).toString().padEnd(34)}│`);
+        temp[7] = (`│         £${(atm.atmControl.checkBalance(AccountNumber)).toString().padEnd(33)}│`);
         temp[9] = ("│  1. Withdraw Cash      9. Back            │");
         this.display(temp);
     },
@@ -205,7 +205,6 @@ screens = {
         this.display(temp);
     },
 
-
     display(screen) {
         console.clear()
         screen[11] = this.errorLine();
@@ -213,7 +212,6 @@ screens = {
         error = "";
         
     }
-
 };
 
 option = 0; // 0 Inital Screen, 1 Intro Screen, 9 Quit
