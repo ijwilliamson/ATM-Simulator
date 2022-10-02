@@ -10,10 +10,11 @@ class Account {
 };
 
 class Log{
-    constructor (accNumber, timeStamp, action, oldBalance, newBalance){
+    constructor (accNumber, timeStamp, action, description, oldBalance, newBalance){
         this.accNumber = accNumber;
         this.timeStamp = timeStamp;
-        this.action = action;
+        this.action = action;  //1 System event, 2 Withdraw, 3 Deposit, 4 Change Pin
+        this.description = description;
         this.oldBalance = oldBalance;
         this.newBalance = newBalance;
     }
@@ -52,7 +53,8 @@ exports.atmControl = {
         this.logInsert(new Log(
             accNumber = 99999999,
             timeStamp = new Date(),
-            action = "Accounts Loaded",
+            action = "1",
+            description = "Accounts Loaded",
             oldBalance = -1,
             newBalance = -1
         ));                        
@@ -68,6 +70,7 @@ exports.atmControl = {
                             element.accNumber,
                             element.timeStamp,
                             element.action,
+                            element.description,
                             element.oldBalance,
                             element.newBalance
                         )));
@@ -79,7 +82,8 @@ exports.atmControl = {
         this.logInsert(new Log(
             accNumber = 99999999,
             timeStamp = new Date(),
-            action = "Log Loaded",
+            action = "1",
+            description = "Log Loaded",
             oldBalance = -1,
             newBalance = -1
         ));                        
@@ -139,7 +143,8 @@ exports.atmControl = {
         this.logInsert(new Log(
             accNumber = temp.accNumber,
             timeStamp = new Date(),
-            action = `Balance Adjustment - (${amount})`,
+            action = "2",
+            description = `Balance Adjustment - (${amount})`,
             oldBalance = oldBal,
             newBalance = newBal
             
@@ -149,7 +154,7 @@ exports.atmControl = {
     //Save the accounts to json
     saveAccounts() {
 
-        let json = JSON.stringify(this.accounts);
+        let json = JSON.stringify(this.accounts, null, "\t");
         let fs = require('fs')
         fs.writeFile("./atmJsonData.json", json, 'utf8',  (err) => {
             if (err)
@@ -179,7 +184,7 @@ exports.atmControl = {
         this.atmLog.push(logRecord);
         
         // save log to a json file
-        let json = JSON.stringify(this.atmLog);
+        let json = JSON.stringify(this.atmLog, null, "\t");
         let fs = require('fs')
         fs.writeFile("./atmJsonLog.json", json, 'utf8',  (err) => {
             if (err)
