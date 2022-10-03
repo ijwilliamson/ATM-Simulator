@@ -1,7 +1,7 @@
 [
 	{
 		"accNumber": 99999999,
-		"timeStamp": "2022-10-02T09:25:30.959Z",
+		"timeStamp": "2022-10-02T13:32:37.055Z",
 		"action": "1",
 		"description": "Log Loaded",
 		"oldBalance": -1,
@@ -9,23 +9,7 @@
 	},
 	{
 		"accNumber": 99999999,
-		"timeStamp": "2022-10-02T09:25:30.961Z",
-		"action": "1",
-		"description": "Accounts Loaded",
-		"oldBalance": -1,
-		"newBalance": -1
-	},
-	{
-		"accNumber": 99999999,
-		"timeStamp": "2022-10-02T09:25:39.380Z",
-		"action": "1",
-		"description": "Log Loaded",
-		"oldBalance": -1,
-		"newBalance": -1
-	},
-	{
-		"accNumber": 99999999,
-		"timeStamp": "2022-10-02T09:25:39.381Z",
+		"timeStamp": "2022-10-02T13:32:37.056Z",
 		"action": "1",
 		"description": "Accounts Loaded",
 		"oldBalance": -1,
@@ -33,15 +17,15 @@
 	},
 	{
 		"accNumber": 12345678,
-		"timeStamp": "2022-10-02T09:25:54.440Z",
+		"timeStamp": "2022-10-02T13:32:44.908Z",
 		"action": "2",
-		"description": "Balance Adjustment - (-230)",
-		"oldBalance": 939.53,
-		"newBalance": 709.53
+		"description": "Balance Adjustment - (2200)",
+		"oldBalance": 619.53,
+		"newBalance": 2819.5299999999997
 	},
 	{
 		"accNumber": 99999999,
-		"timeStamp": "2022-10-02T09:27:22.215Z",
+		"timeStamp": "2022-10-02T13:33:28.283Z",
 		"action": "1",
 		"description": "Log Loaded",
 		"oldBalance": -1,
@@ -49,39 +33,7 @@
 	},
 	{
 		"accNumber": 99999999,
-		"timeStamp": "2022-10-02T09:27:22.217Z",
-		"action": "1",
-		"description": "Accounts Loaded",
-		"oldBalance": -1,
-		"newBalance": -1
-	},
-	{
-		"accNumber": 99999999,
-		"timeStamp": "2022-10-02T09:50:58.440Z",
-		"action": "1",
-		"description": "Log Loaded",
-		"oldBalance": -1,
-		"newBalance": -1
-	},
-	{
-		"accNumber": 99999999,
-		"timeStamp": "2022-10-02T09:50:58.442Z",
-		"action": "1",
-		"description": "Accounts Loaded",
-		"oldBalance": -1,
-		"newBalance": -1
-	},
-	{
-		"accNumber": 99999999,
-		"timeStamp": "2022-10-02T09:53:57.586Z",
-		"action": "1",
-		"description": "Log Loaded",
-		"oldBalance": -1,
-		"newBalance": -1
-	},
-	{
-		"accNumber": 99999999,
-		"timeStamp": "2022-10-02T09:53:57.588Z",
+		"timeStamp": "2022-10-02T13:33:28.284Z",
 		"action": "1",
 		"description": "Accounts Loaded",
 		"oldBalance": -1,
@@ -89,15 +41,15 @@
 	},
 	{
 		"accNumber": 12345678,
-		"timeStamp": "2022-10-02T10:01:37.647Z",
+		"timeStamp": "2022-10-02T13:33:51.388Z",
 		"action": "2",
-		"description": "Balance Adjustment - (-90)",
-		"oldBalance": 709.53,
-		"newBalance": 619.53
+		"description": "Balance Adjustment - (-250)",
+		"oldBalance": 2819.5299999999997,
+		"newBalance": 2569.5299999999997
 	},
 	{
 		"accNumber": 99999999,
-		"timeStamp": "2022-10-02T10:02:47.229Z",
+		"timeStamp": "2022-10-02T13:33:54.590Z",
 		"action": "1",
 		"description": "Log Loaded",
 		"oldBalance": -1,
@@ -105,10 +57,130 @@
 	},
 	{
 		"accNumber": 99999999,
-		"timeStamp": "2022-10-02T10:02:47.230Z",
+		"timeStamp": "2022-10-02T13:33:54.592Z",
 		"action": "1",
 		"description": "Accounts Loaded",
 		"oldBalance": -1,
 		"newBalance": -1
+	},
+	{
+		"accNumber": 99999999,
+		"timeStamp": "2022-10-02T13:45:12.138Z",
+		"action": "1",
+		"description": "Log Loaded",
+		"oldBalance": -1,
+		"newBalance": -1
+	},
+	{
+		"accNumber": 99999999,
+		"timeStamp": "2022-10-02T13:45:12.140Z",
+		"action": "1",
+		"description": "Accounts Loaded",
+		"oldBalance": -1,
+		"newBalance": -1
+	},
+	{
+		"accNumber": 12345678,
+		"timeStamp": "2022-10-02T13:45:22.214Z",
+		"action": "2",
+		"description": "Balance Adjustment - (2200)",
+		"oldBalance": 2569.52,
+		"newBalance": 4769.5199999999995
+	},
+	{
+		"accNumber": 99999999,
+		"timeStamp": "2022-10-02T13:50:08.370Z",
+		"action": "1",
+		"description": "Log Loaded",
+		"oldBalance": -1,
+		"newBalance": -1
+	},
+	{
+		"accNumber": 99999999,
+		"timeStamp": "2022-10-02T13:50:08.371Z",
+		"action": "1",
+		"description": "Accounts Loaded",
+		"oldBalance": -1,
+		"newBalance": -1
+	},
+	{
+		"accNumber": 99999999,
+		"timeStamp": "2022-10-02T13:51:53.498Z",
+		"action": "1",
+		"description": "Log Loaded",
+		"oldBalance": -1,
+		"newBalance": -1
+	},
+	{
+		"accNumber": 99999999,
+		"timeStamp": "2022-10-02T13:51:53.499Z",
+		"action": "1",
+		"description": "Accounts Loaded",
+		"oldBalance": -1,
+		"newBalance": -1
+	},
+	{
+		"accNumber": 99999999,
+		"timeStamp": "2022-10-02T13:52:01.110Z",
+		"action": "1",
+		"description": "Log Loaded",
+		"oldBalance": -1,
+		"newBalance": -1
+	},
+	{
+		"accNumber": 99999999,
+		"timeStamp": "2022-10-02T13:52:01.112Z",
+		"action": "1",
+		"description": "Accounts Loaded",
+		"oldBalance": -1,
+		"newBalance": -1
+	},
+	{
+		"accNumber": 99999999,
+		"timeStamp": "2022-10-02T13:53:21.888Z",
+		"action": "1",
+		"description": "Log Loaded",
+		"oldBalance": -1,
+		"newBalance": -1
+	},
+	{
+		"accNumber": 99999999,
+		"timeStamp": "2022-10-02T13:53:21.890Z",
+		"action": "1",
+		"description": "Accounts Loaded",
+		"oldBalance": -1,
+		"newBalance": -1
+	},
+	{
+		"accNumber": 12345678,
+		"timeStamp": "2022-10-02T13:53:43.513Z",
+		"action": "2",
+		"description": "Balance Adjustment - (-50)",
+		"oldBalance": 4769.5199999999995,
+		"newBalance": 4719.5199999999995
+	},
+	{
+		"accNumber": 99999999,
+		"timeStamp": "2022-10-02T14:07:33.988Z",
+		"action": "1",
+		"description": "Log Loaded",
+		"oldBalance": -1,
+		"newBalance": -1
+	},
+	{
+		"accNumber": 99999999,
+		"timeStamp": "2022-10-02T14:07:33.989Z",
+		"action": "1",
+		"description": "Accounts Loaded",
+		"oldBalance": -1,
+		"newBalance": -1
+	},
+	{
+		"accNumber": 12345678,
+		"timeStamp": "2022-10-02T14:07:44.856Z",
+		"action": "2",
+		"description": "Balance Adjustment - (2000)",
+		"oldBalance": 4719.5199999999995,
+		"newBalance": 6719.5199999999995
 	}
 ]

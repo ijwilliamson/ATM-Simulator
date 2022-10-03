@@ -8,7 +8,7 @@ const prompt = require('prompt-sync')();
 let AccountNumber = "";
 let AccountName = "";
 let error = "";
-let cash = "";
+let cash = 0;
 
 const Input = (options,screen) => {
     let userInput = "";
@@ -86,6 +86,30 @@ const withDrawOther = () => {
     
 }
 
+const depositAmount = () => {
+    let curBalance = 0;
+    do{
+        screens.accDepositAmountScreen();
+        userInput = prompt("How much are you depositing? :");
+        if (userInput == "9") return 9;
+
+        if (userInput%10 != 0)
+        {
+            error = "You must enter a multiple of £1"
+        }
+        
+        if (userInput%1 != 0)
+        {
+            error = `You can only deposit Notes`
+        }
+        
+ 
+
+    } while(userInput%10 != 0)
+    cash = userInput;
+    
+}
+
 screens = {
 
     //Note it is important to make a deep copy of the masterScreen to retain
@@ -155,7 +179,7 @@ screens = {
         temp[3] = (`│         Hello ${AccountName.padEnd(28)}│`);
         temp[5] = ("│  1. Check Balance      2. Withdraw Cash   │");
         temp[7] = ("│  3. Change Pin         4. Deposit Cash    │");
-        temp[9] = ("│                        9. Back            │");
+        temp[9] = ("│  5. Recent Activity    9. Back            │");
 
         this.display(temp);
     },
@@ -183,8 +207,18 @@ screens = {
         temp = this.deepMasterCopy();
         temp[3] = (`│         Hello ${AccountName.padEnd(28)}│`);
         temp[5] = ("│  Remove your card                         │");
-        temp[7] = (`│  Remove your £${cash.padEnd(28)}│`);
-        temp[9] = ("│                        9. Exit            │");
+        temp[7] = (`│  Remove your £${parseFloat(cash).toFixed(2).padEnd(28)}│`);
+        temp[9] = ("│                        9. Confirm         │");
+
+        this.display(temp);
+    },
+
+    accDepositCompleteScreen(){
+        temp = this.deepMasterCopy();
+        temp[3] = (`│         Hello ${AccountName.padEnd(28)}│`);
+        temp[5] = ("│  Place Deposit Envelope in the draw       │");
+        temp[7] = (`│  Deposit amount £${parseFloat(cash).toFixed(2).padEnd(25)}│`);    
+        temp[9] = ("│                        9. Confirm         │");
 
         this.display(temp);
     },
@@ -194,6 +228,15 @@ screens = {
         temp[3] = (`│         Hello ${AccountName.padEnd(28)}│`);
         temp[5] = ("│     Enter amount to withdraw (max £250)   │");
         temp[7] = ("│     9. Back                               │");
+        this.display(temp);
+        
+    },
+
+    accDepositAmountScreen(){
+        temp = this.deepMasterCopy();
+        temp[3] = (`│         Hello ${AccountName.padEnd(28)}│`);
+        temp[5] = ("│  Enter amount depositing  (max 50 notes)  │");
+        temp[7] = ("│  9. Back                                  │");
         this.display(temp);
         
     },
@@ -247,12 +290,13 @@ while (option != 9)
                 break;
             
             case 3: //Account Options Screen
-                var o = Input(["1","2","3","4","9"],"accAccountOptionScreen");
+                var o = Input(["1","2","3","4","5","9"],"accAccountOptionScreen");
                 if (o == 9){ option = 0}  //Exit
                 if (o == 1){ option = 4}  //Check Balance
                 if (o == 2){ option = 5}  //Withdraw Cash
                 if (o == 3){ option = 6}  //Change Pin
-                if (o == 4){ option = 7} //Deposit Cash
+                if (o == 4){ option = 7}  //Deposit Cash
+                if (o == 5){ option = 8}  //Account Activity
                 
                 break;
 
@@ -276,11 +320,14 @@ while (option != 9)
             case 52:
             case 53:
             case 54:
-            cash = ((option-50)*10).toFixed(2).toString();
+            cash = ((option-50)*10);
             atm.atmControl.adjustBalance(AccountNumber,0-((option-50)*10));   
             var o = Input(["9"],"accWithdrawCompleteScreen");
-            cash = "";
-            if (o == 9){ option = 9}  //Exit   
+            AccountName = "";
+            AccountNumber = "";
+            cash = 0;
+            error = ""
+            if (o == 9){ option = 0}  //Logged out   
             break; 
 
             case 55: //withdraw other amount
@@ -290,13 +337,24 @@ while (option != 9)
                     break;}
                 
                 option = 9;
-                atm.atmControl.adjustBalance(AccountNumber,0-(parseFloat(cash).toFixed(2)));   
+                atm.atmControl.adjustBalance(AccountNumber,0-(cash));   
                 var o = Input(["9"],"accWithdrawCompleteScreen");
                 if (o == 9){ option = 9}  //Exit
-                cash = "";
+                cash = 0;
                 break;
 
-           
+            case 7: //deposit amount
+                var o = depositAmount();
+                if (o == 9){
+                    option = 5;
+                    break;}
+                
+                option = 9;
+                atm.atmControl.adjustBalance(AccountNumber,parseFloat(cash));   
+                var o = Input(["9"],"accDepositCompleteScreen");
+                if (o == 9){ option = 3}  //Exit
+                cash = 0;
+                break;
 
             default:  // Handles any options not configured
                 var o = Input(["9"],"ErrScreen");
