@@ -128,7 +128,7 @@ exports.atmControl = {
     adjustBalance(accountNumber, amount) {
         temp = this.getAccount(accountNumber);
         oldBal = temp.balance;
-        newBal = temp.balance += amount;
+        newBal = (temp.balance *10 + amount*10)/10;
          
         i = this.accounts.indexOf(temp);
         
